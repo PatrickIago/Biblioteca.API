@@ -56,52 +56,46 @@ Aplicação web simples que consome uma API para exibir os dados e oferecer uma 
 ---
 
 ## 📁 Estrutura do Projeto
+📁 Sistema de Gerenciamento de Biblioteca  
+├── 📁 .github  
+│   └── 📁 workflows  
+├── 📁 src  
+│   ├── 📁 1 - Apresentação // Camada da API (.NET Core)  
+│   │   ├── 📁 Controllers  
+│   │   │   ├── 📄 AuthorController.cs  
+│   │   │   └── 📄 BookController.cs  
+│   │   ├── 📁 wwwroot // Frontend (HTML, CSS, JS, Imagens)  
+│   │   │   ├── 📄 index.html // Página inicial (Dashboard)  
+│   │   │   ├── 📄 gerenciamento.html // Página de gerenciamento  
+│   │   │   ├── 📁 css  
+│   │   │   │   └── 📄 Style.css  
+│   │   │   ├── 📁 js  
+│   │   │   │   └── 📄 Script.js  
+│   │   │   └── 📁 images  
+│   │   │       ├── 📄 author-illustration.png  
+│   │   │       └── 📄 books-illustration.png  
+│   │   ├── 📄 appsettings.json  
+│   │   └── 📄 Program.cs  
+│   ├── 📁 2 - Application // Casos de uso, DTOs, manipuladores  
+│   │   └── 📄 Biblioteca.Application.csproj  
+│   ├── 📁 3 - Domínio // Entidades e regras de negócio  
+│   │   ├── 📁 Entidades  
+│   │   │   ├── 📄 Autor.cs  
+│   │   │   └── 📄 Livro.cs  
+│   │   ├── 📁 Enumerado  
+│   │   │   └── 📄 BookGenre.cs  
+│   │   └── 📄 Biblioteca.Domain.csproj  
+│   ├── 📁 4 - Infraestrutura // Acesso a dados, serviços externos  
+│   │   ├── 📁 Dados  
+│   │   │   ├── 📄 BibliotecaDbContext.cs  
+│   │   │   └── 📁 Migrações  
+│   │   ├── 📁 Serviço  
+│   │   │   ├── 📄 AuthorService.cs  
+│   │   │   └── 📄 BookService.cs  
+│   │   └── 📄 Biblioteca.Infra.csproj  
+│   └── 📁 5 - Testes // Testes automatizados  
+│       └── 📄 Biblioteca.Tests.csproj  
+├── 📄 README.md  
+├── 📄 .gitattributes  
+└── 📄 .gitignore  
 
-├── 📁 .github/
-│   └── 📁 workflows/
-│        └── 📄 ... (GitHub Actions files)
-├── 📁 src/
-│   ├── 📁 1 - Presentation/        # API Layer (.NET Core)
-│   │   ├── 📁 Controllers/
-│   │   │   ├── 📄 AuthorController.cs
-│   │   │   └── 📄 BookController.cs
-│   │   ├── 📁 wwwroot/           # Frontend (HTML, CSS, JS, Images)
-│   │   │   ├── 📄 index.html       # Home page (Dashboard)
-│   │   │   ├── 📄 gerenciamento.html # Management page (Authors/Books)
-│   │   │   ├── 📁 css/
-│   │   │   │   └── 📄 Style.css    # CSS Styles
-│   │   │   ├── 📁 js/
-│   │   │   │   └── 📄 Script.js    # JavaScript Logic
-│   │   │   └── 📁 images/
-│   │   │        ├── 📄 author-illustration.png
-│   │   │        └── 📄 books-illustration.png
-│   │   ├── 📄 appsettings.json
-│   │   └── 📄 Program.cs           # Host and services configuration
-│   ├── 📁 2 - Application/         # Application Logic (use cases, DTOs, handlers)
-│   │   ├── 📄 Biblioteca.Application.csproj
-│   │   └── 📄 ... (More Application files)
-│   ├── 📁 3 - Domain/              # Domain (entities, business rules)
-│   │   ├── 📄 Biblioteca.Domain.csproj
-│   │   ├── 📁 Entities/
-│   │   │   ├── 📄 Author.cs
-│   │   │   └── 📄 Book.cs
-│   │   └── 📁 Enumerado/
-│   │       └── 📄 BookGenre.cs
-│   │   └── 📄 ... (More Domain files)
-│   ├── 📁 4 - Infrastructure/      # Infrastructure (data persistence, external services)
-│   │   ├── 📄 Biblioteca.Infra.csproj
-│   │   ├── 📁 Data/
-│   │   │   └── 📄 BibliotecaDbContext.cs
-│   │   │   └── 📁 Migrations/
-│   │   │       └── 📄 ... (EF Core Migrations files)
-│   │   ├── 📁 Service/
-│   │   │   ├── 📄 AuthorService.cs
-│   │   │   └── 📄 BookService.cs
-│   │   └── 📄 ... (More Infrastructure files)
-│   └── 📁 5 - Tests/               # Test Projects
-│       ├── 📄 Biblioteca.Tests.csproj
-│       └── 📄 ... (More Test files)
-├── 📄 README.md
-├── 📄 .gitattributes
-├── 📄 .gitignore
-└── 📄 ... (Other solution configuration files)
