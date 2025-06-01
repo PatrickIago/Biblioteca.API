@@ -28,53 +28,54 @@ Adicionar novos livros.
 Editar informações de livros existentes.
 Excluir livros.
 
-Estrutura do Projeto
+## Estrutura do Projeto
+
 Sistema de Gerenciamento de Biblioteca
-├─── 📁 .github/
-│    └─── 📁 workflows/
-│         └─── 📄 ... (GitHub Actions files)
-├─── 📁 src/
-│    ├─── 📁 1 - Presentation/        # API Layer (.NET Core)
-│    │    ├─── 📁 Controllers/
-│    │    │    ├─── 📄 AuthorController.cs
-│    │    │    └─── 📄 BookController.cs
-│    │    ├─── 📁 wwwroot/           # Frontend (HTML, CSS, JS, Images)
-│    │    │    ├─── 📄 index.html       # Home page (Dashboard)
-│    │    │    ├─── 📄 gerenciamento.html # Management page (Authors/Books)
-│    │    │    ├─── 📁 css/
-│    │    │    │    └─── 📄 Style.css    # CSS Styles
-│    │    │    ├─── 📁 js/
-│    │    │    │    └─── 📄 Script.js    # JavaScript Logic
-│    │    │    └─── 📁 images/
-│    │    │         ├─── 📄 author-illustration.png
-│    │    │         └─── 📄 books-illustration.png
-│    │    ├─── 📄 appsettings.json
-│    │    └─── 📄 Program.cs           # Host and services configuration
-│    ├─── 📁 2 - Application/         # Application Logic (use cases, DTOs, handlers)
-│    │    ├─── 📄 Biblioteca.Application.csproj
-│    │    └─── 📄 ... (More Application files)
-│    ├─── 📁 3 - Domain/              # Domain (entities, business rules)
-│    │    ├─── 📄 Biblioteca.Domain.csproj
-│    │    ├─── 📁 Entities/
-│    │    │    ├─── 📄 Author.cs
-│    │    │    └─── 📄 Book.cs
-│    │    └─── 📁 Enumerado/
-│    │        └─── 📄 BookGenre.cs
-│    │    └─── 📄 ... (More Domain files)
-│    ├─── 📁 4 - Infrastructure/      # Infrastructure (data persistence, external services)
-│    │    ├─── 📄 Biblioteca.Infra.csproj
-│    │    ├─── 📁 Data/
-│    │    │    └─── 📄 BibliotecaDbContext.cs
-│    │    ├─── 📁 Migrations/
-│    │    │    └─── 📄 ... (EF Core Migrations files)
-│    │    ├─── 📁 Service/
-│    │    │    ├─── 📄 AuthorService.cs
-│    │    │    └─── 📄 BookService.cs
-│    │    └─── 📄 ... (More Infrastructure files)
-│    └─── 📁 5 - Tests/               # Test Projects
-│        ├─── 📄 Biblioteca.Tests.csproj
-│        └─── 📄 ... (More Test files)
-├─── 📄 README.md
-├─── 📄 .gitattributes
-├─── 📄 .gitignore
-└─── 📄 ... (Other solution configuration files)
+├── 📁 .github/
+│   └── 📁 workflows/
+│        └── 📄 ... (GitHub Actions files)
+├── 📁 src/
+│   ├── 📁 1 - Presentation/        # API Layer (.NET Core)
+│   │   ├── 📁 Controllers/
+│   │   │   ├── 📄 AuthorController.cs
+│   │   │   └── 📄 BookController.cs
+│   │   ├── 📁 wwwroot/           # Frontend (HTML, CSS, JS, Images)
+│   │   │   ├── 📄 index.html       # Home page (Dashboard)
+│   │   │   ├── 📄 gerenciamento.html # Management page (Authors/Books)
+│   │   │   ├── 📁 css/
+│   │   │   │   └── 📄 Style.css    # CSS Styles
+│   │   │   ├── 📁 js/
+│   │   │   │   └── 📄 Script.js    # JavaScript Logic
+│   │   │   └── 📁 images/
+│   │   │        ├── 📄 author-illustration.png
+│   │   │        └── 📄 books-illustration.png
+│   │   ├── 📄 appsettings.json
+│   │   └── 📄 Program.cs           # Host and services configuration
+│   ├── 📁 2 - Application/         # Application Logic (use cases, DTOs, handlers)
+│   │   ├── 📄 Biblioteca.Application.csproj
+│   │   └── 📄 ... (More Application files)
+│   ├── 📁 3 - Domain/              # Domain (entities, business rules)
+│   │   ├── 📄 Biblioteca.Domain.csproj
+│   │   ├── 📁 Entities/
+│   │   │   ├── 📄 Author.cs
+│   │   │   └── 📄 Book.cs
+│   │   └── 📁 Enumerado/
+│   │       └── 📄 BookGenre.cs
+│   │   └── 📄 ... (More Domain files)
+│   ├── 📁 4 - Infrastructure/      # Infrastructure (data persistence, external services)
+│   │   ├── 📄 Biblioteca.Infra.csproj
+│   │   ├── 📁 Data/
+│   │   │   └── 📄 BibliotecaDbContext.cs
+│   │   │   └── 📁 Migrations/
+│   │   │       └── 📄 ... (EF Core Migrations files)
+│   │   ├── 📁 Service/
+│   │   │   ├── 📄 AuthorService.cs
+│   │   │   └── 📄 BookService.cs
+│   │   └── 📄 ... (More Infrastructure files)
+│   └── 📁 5 - Tests/               # Test Projects
+│       ├── 📄 Biblioteca.Tests.csproj
+│       └── 📄 ... (More Test files)
+├── 📄 README.md
+├── 📄 .gitattributes
+├── 📄 .gitignore
+└── 📄 ... (Other solution configuration files)
