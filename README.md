@@ -1,105 +1,107 @@
-📚 Sistema de Gerenciamento de Biblioteca
-Este é um sistema simples de gerenciamento de biblioteca desenvolvido com ASP.NET Core para o backend (API) e HTML, CSS e JavaScript puro para o frontend. Ele permite o cadastro, visualização, edição e exclusão de autores e livros.
+# 📚 Sistema de Gerenciamento de Biblioteca
 
-🧭 Visão Geral do Projeto
+Este é um sistema simples de gerenciamento de biblioteca desenvolvido com **ASP.NET Core** para o backend (API) e **HTML, CSS e JavaScript puro** para o frontend. Ele permite o **cadastro, visualização, edição e exclusão** de autores e livros.
+
+---
+
+## 🧭 Visão Geral do Projeto
+
 O sistema é dividido em duas partes principais:
 
-🔹 Backend (API - ASP.NET Core)
+### 🔹 Backend (API - ASP.NET Core)
+
 Responsável por gerenciar os dados de autores e livros, persistindo em um banco de dados e expondo-os através de uma API RESTful.
 
-🔧 Arquitetura
-O backend segue princípios de Clean Architecture e DDD (Domain-Driven Design), com as seguintes camadas:
+#### 🔧 Arquitetura
 
-Apresentação: Camada de API (Controladores).
+O backend segue princípios de **Clean Architecture** e **DDD (Domain-Driven Design)**, com as seguintes camadas:
 
-Aplicação: Lógica de negócio e casos de uso.
+- **Apresentação**: Camada da API (Controladores)
+- **Aplicação**: Lógica de negócio e casos de uso
+- **Domínio**: Entidades, enumerações e regras de negócio
+- **Infraestrutura**: Persistência de dados (EF Core) e serviços externos
+- **Testes**: Projetos de teste para garantir a qualidade do código
 
-Domínio: Entidades, enumerações e regras de negócio.
+---
 
-Infraestrutura: Persistência de dados (EF Core) e serviços externos.
+### 🔹 Frontend (HTML, CSS, JavaScript)
 
-Testes: Projetos de teste para garantir a qualidade do código.
+Aplicação web simples que consome uma API para exibir os dados e oferecer uma **interface de usuário intuitiva**.
 
-🔹 Frontend (HTML, CSS, JavaScript)
-Aplicação web simples que consome a API para exibir os dados e oferecer uma interface de usuário intuitiva.
+#### ✨ Páginas
 
-✨ Páginas
-Dashboard: Layout com cartões que direcionam para "Gerenciar Autores" ou "Gerenciar Livros".
+- **Dashboard**: Layout com cartões que direcionam para _Gerenciar Autores_ ou _Gerenciar Livros_
+- **Gerenciamento**: Interface para listar, detalhar, adicionar, editar e excluir autores e livros
 
-Gerenciamento: Interface para listar, detalhar, adicionar, editar e excluir autores e livros.
+---
 
-🛠️ Funcionalidades
-✅ Gerenciar Autores
-Listar todos os autores
+## ✅ Funcionalidades
 
-Visualizar detalhes de um autor (e seus livros)
+### 📖 Gerenciar Autores
 
-Adicionar novo autor
+- Listar todos os autores
+- Visualizar detalhes de um autor (e seus livros)
+- Adicionar novo autor
+- Editar autor
+- Excluir autor
 
-Editar autor
+### 📚 Gerenciar Livros
 
-Excluir autor
+- Listar todos os livros
+- Visualizar detalhes de um livro
+- Adicionar novo livro
+- Editar livro
+- Excluir livro
 
-✅ Gerenciar Livros
-Listar todos os livros
+---
 
-Visualizar detalhes de um livro
+## 📁 Estrutura do Projeto
 
-Adicionar novo livro
-
-Editar livro
-
-Excluir livro
-
-🗂️ Estrutura do Projeto
-nginx
-Copiar
-Editar
-Sistema de Gerenciamento de Biblioteca
 ├── 📁 .github/
 │   └── 📁 workflows/
-│       └── 📄 ... (arquivos GitHub Actions)
+│        └── 📄 ... (GitHub Actions files)
 ├── 📁 src/
-│   ├── 📁 1 - Apresentação/         # Camada de API (.NET Core)
+│   ├── 📁 1 - Presentation/        # API Layer (.NET Core)
 │   │   ├── 📁 Controllers/
 │   │   │   ├── 📄 AuthorController.cs
 │   │   │   └── 📄 BookController.cs
-│   │   ├── 📁 wwwroot/              # Frontend (HTML, CSS, JS, Imagens)
-│   │   │   ├── 📄 index.html        # Página inicial (Dashboard)
-│   │   │   ├── 📄 gerenciamento.html# Página de gerenciamento
+│   │   ├── 📁 wwwroot/           # Frontend (HTML, CSS, JS, Images)
+│   │   │   ├── 📄 index.html       # Home page (Dashboard)
+│   │   │   ├── 📄 gerenciamento.html # Management page (Authors/Books)
 │   │   │   ├── 📁 css/
-│   │   │   │   └── 📄 Style.css
+│   │   │   │   └── 📄 Style.css    # CSS Styles
 │   │   │   ├── 📁 js/
-│   │   │   │   └── 📄 Script.js
+│   │   │   │   └── 📄 Script.js    # JavaScript Logic
 │   │   │   └── 📁 images/
-│   │   │       ├── 📄 author-illustration.png
-│   │   │       └── 📄 books-illustration.png
+│   │   │        ├── 📄 author-illustration.png
+│   │   │        └── 📄 books-illustration.png
 │   │   ├── 📄 appsettings.json
-│   │   └── 📄 Program.cs
-│   ├── 📁 2 - Application/          # Casos de uso, DTOs, manipuladores
+│   │   └── 📄 Program.cs           # Host and services configuration
+│   ├── 📁 2 - Application/         # Application Logic (use cases, DTOs, handlers)
 │   │   ├── 📄 Biblioteca.Application.csproj
-│   │   └── 📄 ...
-│   ├── 📁 3 - Domínio/              # Entidades e regras de negócio
+│   │   └── 📄 ... (More Application files)
+│   ├── 📁 3 - Domain/              # Domain (entities, business rules)
 │   │   ├── 📄 Biblioteca.Domain.csproj
-│   │   ├── 📁 Entidades/
-│   │   │   ├── 📄 Autor.cs
-│   │   │   └── 📄 Livro.cs
+│   │   ├── 📁 Entities/
+│   │   │   ├── 📄 Author.cs
+│   │   │   └── 📄 Book.cs
 │   │   └── 📁 Enumerado/
 │   │       └── 📄 BookGenre.cs
-│   ├── 📁 4 - Infraestrutura/       # Acesso a dados, serviços externos
+│   │   └── 📄 ... (More Domain files)
+│   ├── 📁 4 - Infrastructure/      # Infrastructure (data persistence, external services)
 │   │   ├── 📄 Biblioteca.Infra.csproj
-│   │   ├── 📁 Dados/
-│   │   │   ├── 📄 BibliotecaDbContext.cs
-│   │   │   └── 📁 Migrações/
-│   │   │       └── 📄 ...
-│   │   ├── 📁 Serviço/
+│   │   ├── 📁 Data/
+│   │   │   └── 📄 BibliotecaDbContext.cs
+│   │   │   └── 📁 Migrations/
+│   │   │       └── 📄 ... (EF Core Migrations files)
+│   │   ├── 📁 Service/
 │   │   │   ├── 📄 AuthorService.cs
 │   │   │   └── 📄 BookService.cs
-│   │   └── 📄 ...
-│   ├── 📁 5 - Testes/               # Testes automatizados
-│   │   ├── 📄 Biblioteca.Tests.csproj
-│   │   └── 📄 ...
+│   │   └── 📄 ... (More Infrastructure files)
+│   └── 📁 5 - Tests/               # Test Projects
+│       ├── 📄 Biblioteca.Tests.csproj
+│       └── 📄 ... (More Test files)
 ├── 📄 README.md
 ├── 📄 .gitattributes
 ├── 📄 .gitignore
-└── 📄 ...
+└── 📄 ... (Other solution configuration files)
