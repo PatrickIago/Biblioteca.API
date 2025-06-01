@@ -1,0 +1,41 @@
+﻿<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Biblioteca</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <h1>📚 <span class="title">Biblioteca</span></h1>
+
+  <form id="bookForm">
+    <input type="hidden" id="bookId" />
+    <input type="text" id="name" placeholder="Nome" required />
+    <input type="text" id="description" placeholder="Descrição" required />
+    <select id="genre" required>
+      <option value="">Gênero</option>
+      <option value="1">Romance</option>
+      <option value="2">Ficção Científica</option>
+      <option value="3">Fantasia</option>
+      <option value="4">Biografia</option>
+    </select>
+    <button type="submit">Salvar</button>
+  </form>
+
+  <h2>Livros Cadastrados</h2>
+  <table>
+    <thead>
+      <tr>
+        <th>Nome</th>
+        <th>Descrição</th>
+        <th>Gênero</th>
+        <th>Ações</th>
+      </tr>
+    </thead>
+    <tbody id="bookTableBody"></tbody>
+  </table>
+
+  <script src="script.js"></script>
+</body>
+</html>

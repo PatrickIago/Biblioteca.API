@@ -1,0 +1,586 @@
+﻿/* Estilos gerais */
+body {
+    font-family: 'Open Sans', sans-serif;
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(to bottom, #2a64ad, #e0f2f7); /* Degradê mais suave */
+    color: #333;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Estilos do cabeçalho da aplicação (compartilhado entre páginas) */
+.app-header {
+    background-color: #1a4f8a; /* Azul mais escuro para o header */
+    color: white;
+    padding: 20px 0;
+    text-align: center;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+}
+
+.app-title {
+    margin: 0;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+}
+
+/* --- Estilos para a Home Page (index.html) --- */
+.home-page .app-header {
+    /* Pode ter estilos específicos se desejar que o header da home seja diferente */
+}
+
+.home-main-content {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+
+.intro-section {
+    text-align: center;
+    margin-bottom: 40px;
+    color: #f0f8ff; /* Cor mais clara para o texto na introdução */
+}
+
+    .intro-section h2 {
+        font-family: 'Montserrat', sans-serif;
+        font-size: 2.2em;
+        margin-bottom: 10px;
+        color: white;
+        text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
+    }
+
+    .intro-section p {
+        font-size: 1.1em;
+        max-width: 600px;
+        line-height: 1.6;
+    }
+
+.selection-cards-container {
+    display: flex;
+    gap: 30px;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 100%;
+    max-width: 1000px;
+}
+
+.selection-card {
+    background-color: white;
+    border-radius: 12px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+    text-decoration: none;
+    color: inherit;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 30px;
+    flex: 1;
+    min-width: 300px;
+    max-width: 450px;
+}
+
+    .selection-card:hover {
+        transform: translateY(-8px);
+        box-shadow: 0 12px 25px rgba(0, 0, 0, 0.25);
+    }
+
+.card-image-wrapper {
+    width: 150px;
+    height: 150px;
+    margin-bottom: 25px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.card-image {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+}
+
+.card-title {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
+    font-size: 1.8em;
+    color: #1a4f8a;
+    margin-bottom: 10px;
+}
+
+.card-description {
+    font-size: 1em;
+    color: #555;
+    margin-bottom: 25px;
+    line-height: 1.5;
+}
+
+.card-button {
+    background-color: #4a90e2;
+    color: white;
+    border: none;
+    padding: 12px 25px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1.1em;
+    font-weight: 600;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+    .card-button:hover {
+        background-color: #337ab7;
+        transform: translateY(-2px);
+    }
+
+    .card-button i {
+        font-size: 1.1em;
+    }
+
+/* --- Estilos para a Página de Gerenciamento (gerenciamento.html) --- */
+.management-page .app-header {
+    padding: 15px 0; /* Um pouco menos de padding para não ocupar tanto espaço */
+}
+
+.management-page .app-title {
+    font-size: 1.8em; /* Título um pouco menor */
+}
+
+.main-nav {
+    margin-top: 15px; /* Espaço entre o título e os botões de navegação */
+}
+
+.nav-button {
+    background-color: #4a90e2;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    margin: 0 5px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 1em;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    display: inline-flex; /* Para alinhar ícone e texto */
+    align-items: center;
+    gap: 8px;
+}
+
+    .nav-button:hover {
+        background-color: #337ab7;
+    }
+
+    .nav-button.active {
+        background-color: #28a745; /* Cor para o botão ativo (verde) */
+        box-shadow: inset 0 2px 5px rgba(0,0,0,0.2);
+        transform: translateY(0); /* Remove o efeito de levantar no hover */
+    }
+
+.app-main {
+    flex-grow: 1;
+    display: flex;
+    justify-content: center; /* Centraliza o conteúdo horizontalmente */
+    align-items: flex-start; /* Alinha o conteúdo ao topo verticalmente */
+    padding: 30px;
+    background: linear-gradient(to bottom, #d9edf7, #f7f7f7); /* Degradê mais claro para o corpo */
+    border-radius: 8px; /* Arredonda as bordas do main content */
+    margin: 20px; /* Margem em volta do conteúdo principal */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); /* Sombra mais suave */
+}
+
+.content-section {
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    padding: 30px;
+    width: 100%;
+    max-width: 900px;
+    margin: 0 auto; /* Centraliza a seção dentro do main */
+}
+
+    .content-section.hidden {
+        display: none;
+    }
+
+.section-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 25px;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 15px;
+}
+
+.section-title {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
+    font-size: 1.8em;
+    color: #1a4f8a;
+    margin: 0;
+}
+
+.add-button {
+    background-color: #28a745; /* Verde para adicionar */
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1em;
+    transition: background-color 0.3s ease;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+    .add-button:hover {
+        background-color: #218838;
+    }
+
+/* Estilos para os cards de exibição de autores/livros (dentro do data-container) */
+.data-container {
+    margin-top: 20px;
+    display: grid; /* Usar Grid para o layout dos cards */
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* 280px min, 1fr max, ajusta automaticamente */
+    gap: 20px;
+}
+
+.author-card, .book-card {
+    background-color: #f8f8f8;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+    .author-card:hover, .book-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    }
+
+    .author-card h3, .book-card h3 {
+        margin-top: 0;
+        margin-bottom: 8px;
+        color: #1a4f8a;
+        font-size: 1.4em;
+    }
+
+    .author-card p, .book-card p {
+        margin: 0;
+        color: #666;
+        font-size: 0.95em;
+    }
+
+.view-author-details-btn, .view-book-details-btn {
+    background-color: #007bff; /* Azul para "Ver Detalhes" */
+    color: white;
+    border: none;
+    padding: 8px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 0.9em;
+    transition: background-color 0.3s ease;
+}
+
+    .view-author-details-btn:hover, .view-book-details-btn:hover {
+        background-color: #0056b3;
+    }
+
+/* Mensagens de estado */
+.loading-message, .error-message, .empty-state-message {
+    text-align: center;
+    padding: 20px;
+    font-size: 1.1em;
+    color: #666;
+}
+
+.error-message {
+    color: #dc3545;
+    background-color: #f8d7da;
+    border: 1px solid #f5c6cb;
+    border-radius: 5px;
+}
+
+/* Estilos para cards de detalhes (autor-details, book-details) */
+.detail-card {
+    background-color: #f8f8f8;
+    border: 1px solid #e0e0e0;
+    border-radius: 10px;
+    padding: 25px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    margin-top: 20px;
+}
+
+    .detail-card p {
+        margin-bottom: 10px;
+        font-size: 1.1em;
+    }
+
+    .detail-card strong {
+        color: #1a4f8a;
+    }
+
+    .detail-card h3 {
+        margin-top: 25px;
+        margin-bottom: 10px;
+        color: #1a4f8a;
+        border-bottom: 1px solid #eee;
+        padding-bottom: 5px;
+    }
+
+.list-unstyled {
+    list-style: none;
+    padding-left: 0;
+}
+
+    .list-unstyled li {
+        margin-bottom: 5px;
+        color: #555;
+    }
+
+.actions-group {
+    margin-top: 30px;
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.action-button {
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1em;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+}
+
+    .action-button.primary {
+        background-color: #007bff; /* Azul para editar */
+        color: white;
+    }
+
+        .action-button.primary:hover {
+            background-color: #0056b3;
+        }
+
+    .action-button.danger {
+        background-color: #dc3545; /* Vermelho para excluir */
+        color: white;
+    }
+
+        .action-button.danger:hover {
+            background-color: #c82333;
+        }
+
+    .action-button.secondary {
+        background-color: #6c757d; /* Cinza para voltar */
+        color: white;
+    }
+
+        .action-button.secondary:hover {
+            background-color: #5a6268;
+        }
+
+/* Estilos de formulário */
+.data-form {
+    background-color: #f8f8f8;
+    border: 1px solid #e0e0e0;
+    border-radius: 10px;
+    padding: 25px;
+    margin-top: 20px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.form-group {
+    margin-bottom: 18px;
+}
+
+    .form-group label {
+        display: block;
+        margin-bottom: 8px;
+        font-weight: 600;
+        color: #333;
+        font-size: 1.05em;
+    }
+
+    .form-group input[type="text"],
+    .form-group input[type="number"],
+    .form-group textarea,
+    .form-group select {
+        width: calc(100% - 20px); /* Ajuste para padding */
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        font-size: 1em;
+        box-sizing: border-box; /* Inclui padding na largura total */
+    }
+
+        .form-group input[type="text"]:focus,
+        .form-group input[type="number"]:focus,
+        .form-group textarea:focus,
+        .form-group select:focus {
+            outline: none;
+            border-color: #4a90e2;
+            box-shadow: 0 0 0 0.2rem rgba(74, 144, 226, 0.25);
+        }
+
+    .form-group textarea {
+        resize: vertical; /* Permite redimensionar verticalmente */
+        min-height: 80px;
+    }
+
+.form-help-text {
+    font-size: 0.85em;
+    color: #777;
+    margin-top: 5px;
+    display: block;
+}
+
+.form-actions {
+    margin-top: 30px;
+    display: flex;
+    gap: 10px;
+    justify-content: flex-end; /* Alinha botões à direita */
+}
+
+.submit-button, .cancel-button {
+    border: none;
+    padding: 12px 25px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1em;
+    font-weight: 600;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.submit-button {
+    background-color: #28a745;
+    color: white;
+}
+
+    .submit-button:hover {
+        background-color: #218838;
+        transform: translateY(-2px);
+    }
+
+.cancel-button {
+    background-color: #6c757d;
+    color: white;
+}
+
+    .cancel-button:hover {
+        background-color: #5a6268;
+        transform: translateY(-2px);
+    }
+
+/* Rodapé (compartilhado) */
+.app-footer {
+    text-align: center;
+    padding: 20px;
+    margin-top: auto;
+    background-color: rgba(0, 0, 0, 0.1);
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 0.9em;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .selection-cards-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .selection-card {
+        max-width: 90%;
+    }
+
+    .intro-section h2 {
+        font-size: 1.8em;
+    }
+
+    .management-page .app-header {
+        flex-direction: column;
+        padding: 15px;
+    }
+
+    .main-nav {
+        margin-top: 10px;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .nav-button {
+        width: 80%;
+        margin: 0 auto;
+    }
+
+    .content-section {
+        padding: 20px;
+    }
+
+    .section-header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .add-button {
+        width: 100%;
+        margin-top: 15px;
+        justify-content: center;
+    }
+
+    .data-container {
+        grid-template-columns: 1fr; /* Uma coluna em telas menores */
+    }
+
+    .author-card, .book-card {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+        .author-card > div:last-child, .book-card > div:last-child {
+            margin-top: 15px;
+            width: 100%;
+            text-align: center;
+        }
+
+    .actions-group {
+        flex-direction: column;
+    }
+
+    .action-button {
+        width: 100%;
+        justify-content: center;
+    }
+
+    .form-group input, .form-group textarea, .form-group select {
+        width: 100%; /* Ocupa 100% da largura do pai */
+    }
+
+    .form-actions {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .submit-button, .cancel-button {
+        width: 100%;
+    }
+}

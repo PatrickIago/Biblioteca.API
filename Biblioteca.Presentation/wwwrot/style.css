@@ -1,0 +1,54 @@
+﻿body {
+    background-image: url(imagens/imagem1.jpg);
+    background-repeat: no-repeat;
+    background-size: cover; 
+    height: 100vh; 
+    font-family: Arial, sans-serif;
+    padding: 30px;
+    text-align: center;
+}
+h1 .title {
+    color: #f3f7ff;
+}
+
+h2{
+    color: rgb(236, 230, 236);
+}
+form {
+    margin-bottom: 20px;
+}
+
+input, select {
+    padding: 10px;
+    margin: 5px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+button {
+    padding: 10px 20px;
+    background-color: #e6e6e6;
+    color: purple;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th, td {
+    border: 1px solid #ccc;
+    padding: 10px;
+}
+
+th {
+    background-color: #eee;
+}
+
+td button {
+    margin: 0 5px;
+}

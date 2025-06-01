@@ -21,6 +21,26 @@ namespace Biblioteca.Infra.Migrations
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
 
+            modelBuilder.Entity("Biblioteca.Domain.Entities.Author", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<int>("Age")
+                        .HasColumnType("int");
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Authors");
+                });
+
             modelBuilder.Entity("Biblioteca.Domain.Entities.Book", b =>
                 {
                     b.Property<int>("Id")
@@ -28,6 +48,9 @@ namespace Biblioteca.Infra.Migrations
                         .HasColumnType("int");
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<int?>("AuthorId")
+                        .HasColumnType("int");
 
                     b.Property<string>("Description")
                         .IsRequired()
@@ -42,7 +65,23 @@ namespace Biblioteca.Infra.Migrations
 
                     b.HasKey("Id");
 
+                    b.HasIndex("AuthorId");
+
                     b.ToTable("Books");
+                });
+
+            modelBuilder.Entity("Biblioteca.Domain.Entities.Book", b =>
+                {
+                    b.HasOne("Biblioteca.Domain.Entities.Author", "Author")
+                        .WithMany("books")
+                        .HasForeignKey("AuthorId");
+
+                    b.Navigation("Author");
+                });
+
+            modelBuilder.Entity("Biblioteca.Domain.Entities.Author", b =>
+                {
+                    b.Navigation("books");
                 });
 #pragma warning restore 612, 618
         }

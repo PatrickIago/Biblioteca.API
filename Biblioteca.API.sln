@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
-VisualStudioVersion = 17.13.35931.197 d17.13
+VisualStudioVersion = 17.13.35931.197
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{02EA681E-C7D8-13C7-8484-4AC65E1B71E8}"
 EndProject
@@ -20,6 +20,18 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Biblioteca.Presentation", "Biblioteca.Presentation\Biblioteca.Presentation.csproj", "{8C6EF6A8-1645-407D-82A4-D9C8E9DB9D20}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Biblioteca.Application", "Biblioteca.Application\Biblioteca.Application.csproj", "{8B1F9600-C086-467D-8E15-BEDF169FD280}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "5 - Tests", "5 - Tests", "{D9B80CFE-A905-41CC-A9DD-77FBB63588AF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Biblioteca.Tests", "Biblioteca.Tests\Biblioteca.Tests.csproj", "{00440385-48EB-41A0-B0A0-44E5E70E433A}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Frontend", "Frontend", "{0BC981ED-5408-4306-A8BB-80F832F3FFFC}"
+	ProjectSection(SolutionItems) = preProject
+		Gerenciamento.html = Gerenciamento.html
+		index.HTML = index.HTML
+		Script.js = Script.js
+		Style.css = Style.css
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -43,6 +55,10 @@ Global
 		{8B1F9600-C086-467D-8E15-BEDF169FD280}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8B1F9600-C086-467D-8E15-BEDF169FD280}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8B1F9600-C086-467D-8E15-BEDF169FD280}.Release|Any CPU.Build.0 = Release|Any CPU
+		{00440385-48EB-41A0-B0A0-44E5E70E433A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{00440385-48EB-41A0-B0A0-44E5E70E433A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{00440385-48EB-41A0-B0A0-44E5E70E433A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{00440385-48EB-41A0-B0A0-44E5E70E433A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -56,6 +72,9 @@ Global
 		{98FF6E46-4B08-4EF8-8A08-42ED355F4E4E} = {7ACF76B4-2603-4640-B3D8-2FDBB5892387}
 		{8C6EF6A8-1645-407D-82A4-D9C8E9DB9D20} = {85FAFEF9-5604-4A2F-BA38-16CCF414B66E}
 		{8B1F9600-C086-467D-8E15-BEDF169FD280} = {4BCFCD63-0107-4EEF-8481-4E75F7C04F20}
+		{D9B80CFE-A905-41CC-A9DD-77FBB63588AF} = {02EA681E-C7D8-13C7-8484-4AC65E1B71E8}
+		{00440385-48EB-41A0-B0A0-44E5E70E433A} = {D9B80CFE-A905-41CC-A9DD-77FBB63588AF}
+		{0BC981ED-5408-4306-A8BB-80F832F3FFFC} = {02EA681E-C7D8-13C7-8484-4AC65E1B71E8}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {3C1815DD-26DF-468D-B438-110E88897F06}
